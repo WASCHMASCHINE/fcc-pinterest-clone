@@ -18,40 +18,45 @@
 		      <a class="navbar-brand" href="#">FCC Book Trading Club</a>
 		    </div>
 		    <ul class="nav navbar-nav">
-		      <li class="active"><a href="/">All Books</a></li>
+		      <li><a href="/">All Books</a></li>
 		      <li><a href="/mybooks">My Books</a></li>
 		    </ul>
 		    <ul class="nav navbar-nav navbar-right">
 		      <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-		      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		      <li class="active"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 		      <li><a href="/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
 		    </ul>
 		  </div>
 		</nav>
-			<div class="container">
-		  		<div class="jumbotron">
-			    	
-					<button class="btn btn-success">Your trade requests (0 outstanding)</button>
-					<button class="btn btn-primary">Your trade for you (0 outstanding)</button>
-					<h2>Your outstanding requests:</h2>
-					<ul class="list-group">
-					  <li class="list-group-item">Book1 <span class="btn glyphicon glyphicon-remove"></span></li>
-					</ul>
-					<h2>Requests from other users:</h2>
-					<ul class="list-group">
-					  <li class="list-group-item">Book1 <span class="btn glyphicon glyphicon-ok"></span><span class="btn glyphicon glyphicon-remove"></span></li>
-					</ul>
-					<h2>All Books:</h2>
-					Click on a book to request it!
-					<br><br>
-
-				    <div id="allBooksGallery" class="row">
-					    
-        			</div>	
-				</div>
+		
+		<div class="container">
+		  	<div class="jumbotron">
+		    	<h2>Login</h2>
+		    	<br>
+		    	<form id="loginForm" class="form-horizontal">
+				  <div class="form-group">
+				    <label for="loginEmail" class="col-sm-2 control-label">Email</label>
+				    <div class="col-sm-10">
+				      <input type="email" class="form-control" id="loginEmail" placeholder="Email">
+				    </div>
+				  </div>
+				  
+				  <div class="form-group">
+				    <label for="loginPassword" class="col-sm-2 control-label">Password</label>
+				    <div class="col-sm-10">
+				      <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+				    </div>
+				  </div>
+				  
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button id="loginButton" class="btn btn-primary">Sign up</button>
+				    </div>
+				  </div>
+				</form>
 			</div>
+		</div>
 		<script type="text/javascript" src="common/ajax-functions.js"></script>
-		<script type="text/javascript" src="controllers/allBooksHandler.client.js"></script>
+		<script type="text/javascript" src="controllers/loginHandler.client.js"></script>
 	</body>
-
 </html>

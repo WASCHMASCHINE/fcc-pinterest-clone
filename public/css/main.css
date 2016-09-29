@@ -1,0 +1,14 @@
+.thumbnail img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.thumbnail {
+    width: 250px;
+    height: 250px;
+}
+
+.binder {
+    display:inline-block;
+    text-align:center;
+}

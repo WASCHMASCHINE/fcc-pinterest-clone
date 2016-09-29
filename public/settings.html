@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>FCC Book Trading Club</title>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	    <link href="/public/css/main.css" rel="stylesheet" type="text/css">
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">FCC Book Trading Club</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		      <li><a href="/">All Books</a></li>
+		      <li><a href="/mybooks">My Books</a></li>
+		    </ul>
+		    <ul class="nav navbar-nav navbar-right">
+		      <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		      <li class="active"><a href="/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+		    </ul>
+		  </div>
+		</nav>
+		<div class="container">
+		  	<div class="jumbotron">
+		    	<h2>Update Profile</h2>
+		    	<br>
+		    	<form class="form-horizontal">
+		    		
+		    	  <div class="form-group">
+				    <label for="settingsCity" class="col-sm-2 control-label">City</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" id="settingsCity" placeholder="City">
+				    </div>
+				  </div>
+				  
+				  <div class="form-group">
+				    <label for="settingsState" class="col-sm-2 control-label">State</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" id="settingsState" placeholder="State">
+				    </div>
+				  </div>
+				  
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-primary">Save changes</button>
+				    </div>
+				  </div>
+				</form>
+				<br>
+				<h2>Change Password</h2>
+		    	<br>
+		    	<form class="form-horizontal">
+		    		
+		    	  <div class="form-group">
+				    <label for="settingsCurrentPassword" class="col-sm-2 control-label">Current Password</label>
+				    <div class="col-sm-10">
+				      <input type="password" class="form-control" id="settingsCurrentPassword" placeholder="Current Password">
+				    </div>
+				  </div>
+				  
+				  <div class="form-group">
+				    <label for="settingsNewPassword" class="col-sm-2 control-label">New Password</label>
+				    <div class="col-sm-10">
+				      <input type="password" class="form-control" id="settingsNewPassword" placeholder="New Password">
+				    </div>
+				  </div>
+				  
+				  
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-primary">Save changes</button>
+				    </div>
+				  </div>
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript" src="common/ajax-functions.js"></script>
+	</body>
+
+</html>
