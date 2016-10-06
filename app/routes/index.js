@@ -6,7 +6,7 @@ var UserHandler = require(path + '/app/controllers/userHandler.server.js');
 var bookHandler = new BookHandler();
 var userHandler = new UserHandler();
 
-module.exports = function (app) {
+module.exports = function (app, passport) {
 	app.route('/')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/index.html');
@@ -41,7 +41,18 @@ module.exports = function (app) {
 	app.route('/api/signup')
 		.post(userHandler.signup);
 		
-	app.route('/api/login')
-		.post(userHandler.login);
+		//http://stackoverflow.com/questions/34431785/req-isauthenticated-is-returning-false-using-nodejs-express-and-passportjs
 	
+	app.post('/api/login', function(req, res, next) {
+		console.log(req.body);
+		passport.authenticate('local', function(err, user, info) {
+			console.log(err, user, info);
+			if (err) { return next(err); }
+			if (!user) { return res.redirect('/login'); }
+			req.logIn(user, function(err) {
+				if (err) { return next(err); }
+				return res.redirect('/mybooks');
+			});
+		})(req, res, next);
+	});
 };

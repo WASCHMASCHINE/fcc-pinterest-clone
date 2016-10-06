@@ -12,7 +12,7 @@ function UserHandler(){
         });
         
     };
-    
+    /*
     this.login = function(req, res){
         mongo.connect(process.env.MONGO_URI, function(err, db){
             if (err) throw err;
@@ -27,7 +27,7 @@ function UserHandler(){
             });
         });
         
-    };
+    };*/
 }
 
 module.exports = UserHandler;
