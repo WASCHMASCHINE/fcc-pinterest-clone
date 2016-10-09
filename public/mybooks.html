@@ -15,16 +15,11 @@
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">FCC Book Trading Club</a>
+		      <a id="menuHeader" class="navbar-brand" href="/">FCC Book Trading Club</a>
 		    </div>
-		    <ul class="nav navbar-nav">
-		      <li><a href="/">All Books</a></li>
-		      <li class="active"><a href="/mybooks">My Books</a></li>
+		    <ul id="menuLeft" class="nav navbar-nav">
 		    </ul>
-		    <ul class="nav navbar-nav navbar-right">
-		      <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-		      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		      <li><a href="/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+		    <ul id="menuRight" class="nav navbar-nav navbar-right">
 		    </ul>
 		  </div>
 		</nav>
@@ -32,30 +27,27 @@
 		<div class="container">
 		  		<div class="jumbotron">
 			    	
-					<button class="btn btn-success">Your trade requests (0 outstanding)</button>
-					<button class="btn btn-primary">Your trade for you (0 outstanding)</button>
 					<h2>Your outstanding requests:</h2>
-					<ul class="list-group">
-					  <li class="list-group-item">Book1 <span class="btn glyphicon glyphicon-remove"></span></li>
+					<ul id="myRequestsList" class="list-group">
 					</ul>
 					<h2>Requests from other users:</h2>
-					<ul class="list-group">
-					  <li class="list-group-item">Book1 <span class="btn glyphicon glyphicon-ok"></span><span class="btn glyphicon glyphicon-remove"></span></li>
+					<ul id="requestToMeList" class="list-group">
 					</ul>
 					<h2>My Books:</h2>
-					<br>
+					
 					<div class="row">
 					    <div class="col-xs-3">
 					    	<input type="text" id="searchString" class="form-control" placeholder="Add Book">
 					    </div>
 					    	<button id="searchBooksButton" class="btn btn-primary">Add</button>
 					</div>
-					
+					<br>
 					<div id="myBooksGallery" class="row">
 					</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="common/ajax-functions.js"></script>
+		<script type="text/javascript" src="controllers/navbarUpdater.client.js"></script>
 		<script type="text/javascript" src="controllers/myBooksHandler.client.js"></script>
 	</body>
 

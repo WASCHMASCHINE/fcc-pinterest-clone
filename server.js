@@ -20,7 +20,7 @@ app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(session({ 
     secret: 'secretBookTradingClubApp',
-    cookie: {maxAge: 60*1000},
+    cookie: {maxAge: 10*60*1000},
     resave: true,
 	saveUninitialized: true
 }));

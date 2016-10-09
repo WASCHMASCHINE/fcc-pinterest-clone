@@ -15,16 +15,11 @@
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">FCC Book Trading Club</a>
+		      <a id="menuHeader" class="navbar-brand" href="/">FCC Book Trading Club</a>
 		    </div>
-		    <ul class="nav navbar-nav">
-		      <li><a href="/">All Books</a></li>
-		      <li><a href="/mybooks">My Books</a></li>
+		    <ul id="menuLeft" class="nav navbar-nav">
 		    </ul>
-		    <ul class="nav navbar-nav navbar-right">
-		      <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-		      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		      <li class="active"><a href="/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+		    <ul id="menuRight" class="nav navbar-nav navbar-right">
 		    </ul>
 		  </div>
 		</nav>
@@ -32,57 +27,55 @@
 		  	<div class="jumbotron">
 		    	<h2>Update Profile</h2>
 		    	<br>
-		    	<form class="form-horizontal">
-		    		
+		    	<form class="form-horizontal" method="post" action="/api/settings_info">
 		    	  <div class="form-group">
 				    <label for="settingsCity" class="col-sm-2 control-label">City</label>
 				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="settingsCity" placeholder="City">
+				      <input type="text" class="form-control" name="settingsCity" placeholder="City">
 				    </div>
 				  </div>
 				  
 				  <div class="form-group">
 				    <label for="settingsState" class="col-sm-2 control-label">State</label>
 				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="settingsState" placeholder="State">
+				      <input type="text" class="form-control" name="settingsState" placeholder="State">
 				    </div>
 				  </div>
 				  
 				  <div class="form-group">
 				    <div class="col-sm-offset-2 col-sm-10">
-				      <button type="submit" class="btn btn-primary">Save changes</button>
+				      <input type="submit" class="btn btn-primary" value="Save changes">
 				    </div>
 				  </div>
 				</form>
 				<br>
 				<h2>Change Password</h2>
 		    	<br>
-		    	<form class="form-horizontal">
-		    		
+		    	<form class="form-horizontal" method="post" action="/api/settings_password">
 		    	  <div class="form-group">
 				    <label for="settingsCurrentPassword" class="col-sm-2 control-label">Current Password</label>
 				    <div class="col-sm-10">
-				      <input type="password" class="form-control" id="settingsCurrentPassword" placeholder="Current Password">
+				      <input type="password" class="form-control" name="settingsCurrentPassword" placeholder="Current Password">
 				    </div>
 				  </div>
 				  
 				  <div class="form-group">
 				    <label for="settingsNewPassword" class="col-sm-2 control-label">New Password</label>
 				    <div class="col-sm-10">
-				      <input type="password" class="form-control" id="settingsNewPassword" placeholder="New Password">
+				      <input type="password" class="form-control" name="settingsNewPassword" placeholder="New Password">
 				    </div>
 				  </div>
 				  
-				  
 				  <div class="form-group">
 				    <div class="col-sm-offset-2 col-sm-10">
-				      <button type="submit" class="btn btn-primary">Save changes</button>
+				      <input type="submit" class="btn btn-primary" value="Save changes">
 				    </div>
 				  </div>
 				</form>
 			</div>
 		</div>
 		<script type="text/javascript" src="common/ajax-functions.js"></script>
+		<script type="text/javascript" src="controllers/navbarUpdater.client.js"></script>
 	</body>
 
 </html>

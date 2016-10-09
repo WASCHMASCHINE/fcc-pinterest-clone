@@ -27,7 +27,6 @@ function handleSignup(){
         });
         return false;
     });
-    
 }
 
 (function () {
