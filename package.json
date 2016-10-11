@@ -1,5 +1,5 @@
 {
-  "name": "fcc-book-trading-club",
+  "name": "fcc-pinterest-clone",
   "version": "1.0.0",
   "description": "Build for FreeCodeCamp",
   "main": "server.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WASCHMASCHINE/fcc-book-trading-club"
+    "url": "git+https://github.com/WASCHMASCHINE/fcc-pinterest-clone"
   },
   "homepage": "http://www.freecodecamp.com/",
   "keywords": [

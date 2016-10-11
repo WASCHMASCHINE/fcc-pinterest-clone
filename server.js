@@ -19,7 +19,7 @@ app.use('/common', express.static(process.cwd() + '/app/common'));
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(session({ 
-    secret: 'secretBookTradingClubApp',
+    secret: 'pinterestCloneApp',
     cookie: {maxAge: 10*60*1000},
     resave: true,
 	saveUninitialized: true
