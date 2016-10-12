@@ -6,6 +6,7 @@ module.exports = function (app, passport) {
 	app.route('/')
 		.get(function (req, res) {
 			// TEST MONGODB ON HEROKU
+			console.log("process.env.MONGO_URI", process.env.MONGO_URI);
 			mongo.connect(process.env.MONGO_URI, function(err, db){
                 if (err) throw err;
                 db.collection('books-data').find({}).toArray(function(err, data){
