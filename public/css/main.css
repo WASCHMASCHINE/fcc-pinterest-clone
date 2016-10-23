@@ -1,14 +1,35 @@
-.thumbnail img {
-    max-height: 100%;
+@font-face {
+  font-family: 'Good-Dog';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/GoodDog.ttf') format('truetype');
+}
+
+.grid-item {
+  float: left;
+  width: 200;
+  height: 300px;
+  border: 1px solid hsla(0, 0%, 0%, 1);
+}
+
+img {
     max-width: 100%;
+    max-height: 80%;
 }
 
-.thumbnail {
-    width: 250px;
-    height: 250px;
+.navbar {
+  font-size: 35px;  
 }
 
-.binder {
-    display:inline-block;
-    text-align:center;
+body {
+    font-family: 'Good-Dog', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 11px;
+  width: 310px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }

@@ -1,8 +1,7 @@
 'use strict';
+var TwitterStrategy = require('passport-twitter').Strategy;
 var mongo = require('mongodb').MongoClient;
-var LocalStrategy = require('passport-local').Strategy;
 
-//https://github.com/passport/express-4.x-local-example/blob/master/server.js
 module.exports = function(passport){
     passport.serializeUser(function(user, done){
         done(null, user);
@@ -11,26 +10,37 @@ module.exports = function(passport){
     passport.deserializeUser(function(id, done){
         mongo.connect(process.env.MONGO_URI, function(err, db) {
             if (err) { return done(err); }
-            var col = db.collection('books-user');
-            col.find({'_id': id}).toArray(function(err, user){
+            var col = db.collection('husky-user');
+            col.find({'userId': id}).toArray(function(err, user){
                 if (err){ return done(err); }
                 return done(null, user);
             });
         });
     });
     
-    passport.use(new LocalStrategy(
-        function(username, password, done){
-            process.nextTick(function(){ 
+    passport.use(new TwitterStrategy({
+            consumerKey: process.env.TWITTER_CONSUMER_KEY,
+            consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+            callbackURL: process.env.APP_URL + "auth/twitter/callback"
+        },
+        function(token, tokenSecret, profile, done){
+            process.nextTick(function(){
+                
                 mongo.connect(process.env.MONGO_URI, function(err, db) {
                     if (err) { return done(err); }
-                    var col = db.collection('books-user');
-                    col.findOne({'email': username, 'password': password }, function(err, result) {
+                    var col = db.collection('husky-user');
+                    col.findOne({'userId': profile.id}, function(err, result) {
         				if (err) { return done(err); }
+        				
         				if (result){
         				    return done(null, result);    
         				} else {
-        				    return done(null, false);
+        				    var newEntry = {'userId': profile.id, 'displayName': profile.displayName};
+                            col.insert(newEntry, function(err,data){
+                    			if (err) throw err;
+                    			db.close();
+                    			done(null, newEntry);
+                            });
         				}
                     });
     	        });
