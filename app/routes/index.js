@@ -19,7 +19,7 @@ module.exports = function (app, passport) {
 	
 	app.route('/my_huskies')
 		.get(isLoggedIn, function (req, res) {
-			res.send("SUCCESS @ my_huskies");
+			res.sendFile(path + "/public/my_huskies.html");
 		});
 		
 	app.route('/add_huskies')
@@ -33,8 +33,15 @@ module.exports = function (app, passport) {
 	app.route("/api/add_husky")
 		.post(isLoggedIn, huskyHandler.addHusky)
 	
+	app.route("/api/delete_husky/*")
+		.get(isLoggedIn, huskyHandler.deleteHusky)
+		
 	app.route("/api/all_huskies")
 		.get(huskyHandler.getAllHuskies)
+		
+	app.route("/api/my_huskies")
+		.get(isLoggedIn, huskyHandler.getMyHuskies)
+	
 	//-----------------------------------------------
 	// Redirect the user to Twitter for authentication.  When complete, Twitter
 	// will redirect the user back to the application at
